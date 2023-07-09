@@ -5,6 +5,7 @@ using UnityEngine;
 public class enmmy : MonoBehaviour
 {
     public int damage = 1;
+    public GameObject effect;
     [SerializeField] int speed = 10;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class enmmy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Instantiate(effect, transform.position, Quaternion.identity);
             other.GetComponent<Ghost>().HP -= damage;
             Debug.Log(other.GetComponent<Ghost>().HP);
             Destroy(gameObject);

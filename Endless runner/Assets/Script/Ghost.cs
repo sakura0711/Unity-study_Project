@@ -8,9 +8,11 @@ public class Ghost : MonoBehaviour
     public float increment;
     public float maxY;
     public float minY;
+    public GameObject effect;
 
     public int HP = 10;
     private Vector2 targetPos;
+    private Vector3 spawnEffectPos;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +27,14 @@ public class Ghost : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxY)
         {
+            spawnEffectPos = new Vector3(transform.position.x, transform.position.y + increment / 2, transform.position.z);
+            Instantiate(effect, spawnEffectPos, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y + increment);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minY)
         {
+            spawnEffectPos = new Vector3(transform.position.x, transform.position.y - increment / 2, transform.position.z);
+            Instantiate(effect, spawnEffectPos, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - increment);
         }
     }
