@@ -32,7 +32,7 @@ public class enmmy : MonoBehaviour
         {
             Instantiate(effect, transform.position, Quaternion.identity);
             other.GetComponent<Ghost>().HP -= damage;
-            Debug.Log(other.GetComponent<Ghost>().HP);
+            // Debug.Log(other.GetComponent<Ghost>().HP);
             Destroy(gameObject);
         }
     }
