@@ -19,12 +19,12 @@ public class enmmy : MonoBehaviour
         // Vector 除了可以指定方向點外，還可以使用 left / right / up / down 等(真方便)
         transform.Translate(Vector2.left * speed * Time.deltaTime, 0);
 
-        // 超出邊界
-        if (gameObject.transform.position.x < -9)
-        {
-            Destroy(gameObject);
-            // Destroy(gameObject.GetComponent<enmmyPatternt01>());
-        }
+        // // 超出邊界
+        // if (gameObject.transform.position.x < -9)
+        // {
+        //     Destroy(gameObject);
+        //     // Destroy(gameObject.GetComponent<enmmyPatternt01>());
+        // }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
