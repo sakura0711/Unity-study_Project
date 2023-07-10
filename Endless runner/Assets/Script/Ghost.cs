@@ -14,10 +14,12 @@ public class Ghost : MonoBehaviour
     private Vector2 targetPos;
     private Vector3 spawnEffectPos;
 
+    private Shaked shaked;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        shaked = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Shaked>();
     }
 
     // Update is called once per frame
@@ -27,12 +29,14 @@ public class Ghost : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxY)
         {
+            shaked.CamShaked();
             spawnEffectPos = new Vector3(transform.position.x, transform.position.y + increment / 2, transform.position.z);
             Instantiate(effect, spawnEffectPos, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y + increment);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minY)
         {
+            shaked.CamShaked();
             spawnEffectPos = new Vector3(transform.position.x, transform.position.y - increment / 2, transform.position.z);
             Instantiate(effect, spawnEffectPos, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - increment);
