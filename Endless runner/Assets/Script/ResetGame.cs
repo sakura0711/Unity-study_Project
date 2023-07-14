@@ -17,9 +17,9 @@ public class ResetGame : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-            SceneManager.LoadScene("SampleScene");
+            // SceneManager.LoadScene("SampleScene");
         }
     }
 }

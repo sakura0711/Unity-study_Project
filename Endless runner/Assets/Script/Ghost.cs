@@ -12,6 +12,7 @@ public class Ghost : MonoBehaviour
     public float minY;
     public GameObject effect;
     public GameObject GameOver;
+    // public GameObject sound;
 
     public int HP = 10;
     private Vector2 targetPos;
@@ -44,6 +45,8 @@ public class Ghost : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxY)
         {
+            GetComponent<AudioSource>().Play();
+            // Instantiate(sound, transform.position, Quaternion.identity);
             shaked.CamShaked();
             spawnEffectPos = new Vector3(transform.position.x, transform.position.y + increment / 2, transform.position.z);
             Instantiate(effect, spawnEffectPos, Quaternion.identity);
@@ -51,6 +54,8 @@ public class Ghost : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minY)
         {
+            GetComponent<AudioSource>().Play();
+            // Instantiate(sound, transform.position, Quaternion.identity);
             shaked.CamShaked();
             spawnEffectPos = new Vector3(transform.position.x, transform.position.y - increment / 2, transform.position.z);
             Instantiate(effect, spawnEffectPos, Quaternion.identity);
