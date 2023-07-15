@@ -28,11 +28,44 @@ public class player : MonoBehaviour
         anim = GetComponent<Animator>();
         score = 0;
         scoreText.text = "獲得的蘋果 : 0";
-        for (int i = 0; i < spawnAppleAmount; i++)
+
+        // 生成蘋果物件
+        for (int i = 0; spawnedApples.Count < spawnAppleAmount; i++)
         {
-            Vector3 spwanPos = new Vector3(Random.Range(spawnPos[0], spawnPos[1]), Random.Range(spawnPos[2], spawnPos[3]), 0);
-            Instantiate(apple, spwanPos, Quaternion.identity);
+            GenerateApple();
         }
+    }
+    // 生成一個蘋果物件，並確保不重疊在障礙物上
+    void GenerateApple()
+    {
+        Vector3 spawnPosV;
+        bool overlapping;
+
+        do
+        {
+            spawnPosV = new Vector3(Random.Range(spawnPos[0], spawnPos[1]), Random.Range(spawnPos[2], spawnPos[3]), 0);
+            overlapping = CheckOverlap(spawnPosV);
+        }
+        while (overlapping);
+
+        GameObject newApple = Instantiate(apple, spawnPosV, Quaternion.identity);
+        spawnedApples.Add(newApple);
+    }
+
+    // 檢查生成位置是否與障礙物重疊
+    bool CheckOverlap(Vector3 position)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.5f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("obstacle"))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
     // Update is called once per frame
     void Update()

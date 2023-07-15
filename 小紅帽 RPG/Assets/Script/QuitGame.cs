@@ -20,7 +20,7 @@ public class QuitGame : MonoBehaviour
         {
             Debug.Log("Exit Game");
             Application.Quit(); // 執行 bulid 成 exe 後才有效
-            EditorApplication.isPlaying = false; //編輯效果中暫停，可以使用EditorApplication
+            // EditorApplication.isPlaying = false; //編輯效果中暫停，可以使用EditorApplication
         };
     }
 }
