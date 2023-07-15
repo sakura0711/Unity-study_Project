@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class player : MonoBehaviour
     Animator anim;
     int score;
     [SerializeField] GameObject apple;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class player : MonoBehaviour
         playerFilpX = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         score = 0;
+        scoreText.text = "獲得的蘋果 : 0";
         Vector3 spwanPos = new Vector3(Random.Range(-8, 9), Random.Range(-4, 5), 0);
         Instantiate(apple, spwanPos, Quaternion.identity);
     }
@@ -59,6 +62,7 @@ public class player : MonoBehaviour
         if (other.gameObject.tag == "apple")
         {
             score++;
+            scoreText.text = "獲得的蘋果 : " + score;
             Debug.Log("score: " + score);
             Destroy(other.gameObject);
             Vector3 spwanPos = new Vector3(Random.Range(-8, 9), Random.Range(-4, 5), 0);
