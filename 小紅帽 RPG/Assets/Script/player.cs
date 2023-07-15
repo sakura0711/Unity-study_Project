@@ -8,12 +8,17 @@ public class player : MonoBehaviour
     public string playerName;
     SpriteRenderer playerFilpX;
     Animator anim;
+    int score;
+    [SerializeField] GameObject apple;
 
     // Start is called before the first frame update
     void Start()
     {
         playerFilpX = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        score = 0;
+        Vector3 spwanPos = new Vector3(Random.Range(-8, 9), Random.Range(-4, 5), 0);
+        Instantiate(apple, spwanPos, Quaternion.identity);
     }
     // Update is called once per frame
     void Update()
@@ -46,6 +51,18 @@ public class player : MonoBehaviour
         else
         {
             anim.SetBool("isMove", false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "apple")
+        {
+            score++;
+            Debug.Log("score: " + score);
+            Destroy(other.gameObject);
+            Vector3 spwanPos = new Vector3(Random.Range(-8, 9), Random.Range(-4, 5), 0);
+            Instantiate(apple, spwanPos, Quaternion.identity);
         }
     }
 }
