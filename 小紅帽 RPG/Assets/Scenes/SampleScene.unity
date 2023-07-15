@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 671449748}
   - component: {fileID: 671449750}
   - component: {fileID: 671449749}
+  - component: {fileID: 671449751}
   m_Layer: 6
   m_Name: RedGirl
   m_TagString: Untagged
@@ -287,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671449745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.9169, y: -1.9243, z: 0}
+  m_LocalPosition: {x: -4.39, y: -0.7, z: 0}
   m_LocalScale: {x: 0.155722, y: 0.14516567, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -355,6 +356,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &671449751
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671449745}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc539e77b38235c4b8b59795df499c52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1320013924
 GameObject:
   m_ObjectHideFlags: 0
