@@ -20,10 +20,17 @@ public class playerCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "triggerHome")
+        if (other.gameObject.name == "HomeTrigger")
         {
             Debug.Log("小紅帽 碰撞到了 door");
             gameObject.transform.position = new Vector3(0, -3, 0);
+
+            SceneManager.LoadScene(other.gameObject.GetComponent<SceneInfo>().SceneName);
+        }
+        if (other.gameObject.name == "doorTrigger")
+        {
+            Debug.Log("小紅帽 碰撞到了 door(出門)");
+            gameObject.transform.position = new Vector3(0, 0, 0);
             SceneManager.LoadScene(other.gameObject.GetComponent<SceneInfo>().SceneName);
         }
     }

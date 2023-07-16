@@ -68,10 +68,9 @@ public class player : MonoBehaviour
         {
             score++;
             scoreText.text = "獲得的蘋果 : " + score.ToString();
-            Debug.Log("score: " + score);
+            // Debug.Log("score: " + score);
             Destroy(other.gameObject);
-            // Vector3 spwanPos = new Vector3(Random.Range(-8, 9), Random.Range(-4, 5), 0);
-            // Instantiate(apple, spwanPos, Quaternion.identity);
+
         }
     }
 }
