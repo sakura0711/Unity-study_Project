@@ -23,7 +23,7 @@ public class player : MonoBehaviour
         anim = GetComponent<Animator>();
         score = 0;
         scoreText.text = "獲得的蘋果 : 0";
-
+        gameObject.transform.position = new Vector3(0, 0, 0);
 
     }
     // 生成一個蘋果物件，並確保不重疊在障礙物上

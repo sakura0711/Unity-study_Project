@@ -40,7 +40,7 @@ public class SpawnApple : MonoBehaviour
     // 檢查生成位置是否與障礙物重疊
     bool CheckOverlap(Vector3 position)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.5f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.8f);
 
         foreach (Collider2D collider in colliders)
         {
