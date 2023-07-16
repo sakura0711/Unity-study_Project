@@ -10,16 +10,11 @@ public class player : MonoBehaviour
     SpriteRenderer playerFilpX;
     Animator anim;
     int score;
-    [SerializeField] GameObject apple;
+
     [Space()]     //可以在變數之間留空格 //標題不能
     public Text scoreText;
 
-    [Header("要生成的蘋果數量/範圍(x1,x2,y1,y2)")]  //可以在變數間寫上標題
-    public int spawnAppleAmount;
-    public float[] spawnPos = new float[4];
 
-    // 用來存儲已生成的蘋果物件的列表
-    private List<GameObject> spawnedApples = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -29,44 +24,10 @@ public class player : MonoBehaviour
         score = 0;
         scoreText.text = "獲得的蘋果 : 0";
 
-        // 生成蘋果物件
-        for (int i = 0; spawnedApples.Count < spawnAppleAmount; i++)
-        {
-            GenerateApple();
-        }
+
     }
     // 生成一個蘋果物件，並確保不重疊在障礙物上
-    void GenerateApple()
-    {
-        Vector3 spawnPosV;
-        bool overlapping;
 
-        do
-        {
-            spawnPosV = new Vector3(Random.Range(spawnPos[0], spawnPos[1]), Random.Range(spawnPos[2], spawnPos[3]), 0);
-            overlapping = CheckOverlap(spawnPosV);
-        }
-        while (overlapping);
-
-        GameObject newApple = Instantiate(apple, spawnPosV, Quaternion.identity);
-        spawnedApples.Add(newApple);
-    }
-
-    // 檢查生成位置是否與障礙物重疊
-    bool CheckOverlap(Vector3 position)
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.5f);
-
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.CompareTag("obstacle"))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
     // Update is called once per frame
     void Update()
     {
