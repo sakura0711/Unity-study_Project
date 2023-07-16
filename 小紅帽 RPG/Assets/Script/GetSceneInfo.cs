@@ -55,6 +55,7 @@ public class GetSceneInfo : MonoBehaviour
             if (rootObject.name == "Grid")
             {
                 doorObject = GameObject.FindGameObjectWithTag("triggerHome");
+                doorObject.SetActive(false);
                 Debug.Log(doorObject);
             }
         }
