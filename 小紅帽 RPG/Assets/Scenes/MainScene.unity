@@ -50932,6 +50932,86 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &667978507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667978508}
+  - component: {fileID: 667978510}
+  - component: {fileID: 667978509}
+  m_Layer: 5
+  m_Name: Tip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &667978508
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667978507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2009208143}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000030517, y: -354}
+  m_SizeDelta: {x: 505.5649, y: 77.2461}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &667978509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667978507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6745283, g: 1, b: 0.97986823, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u6309\u4E0B E \u9375\u4E92\u52D5"
+--- !u!222 &667978510
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667978507}
+  m_CullTransparentMesh: 1
 --- !u!1 &671449745
 GameObject:
   m_ObjectHideFlags: 0
@@ -50949,6 +51029,7 @@ GameObject:
   - component: {fileID: 671449752}
   - component: {fileID: 671449753}
   - component: {fileID: 671449754}
+  - component: {fileID: 671449755}
   m_Layer: 6
   m_Name: RedGirl
   m_TagString: Player
@@ -51130,6 +51211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea43e02b5aaa6dc4e823b5a3a54390f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tipText: {fileID: 667978509}
 --- !u!114 &671449754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51142,6 +51224,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef947680ce155e47956b0ad480706cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &671449755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671449745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c88a3bbf953244282c85bce633fd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCanvas: {fileID: 2009208142}
+  tipText: {fileID: 667978509}
 --- !u!1 &695506888
 GameObject:
   m_ObjectHideFlags: 0
@@ -63301,6 +63397,7 @@ RectTransform:
   m_Children:
   - {fileID: 384061224}
   - {fileID: 511034540}
+  - {fileID: 667978508}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

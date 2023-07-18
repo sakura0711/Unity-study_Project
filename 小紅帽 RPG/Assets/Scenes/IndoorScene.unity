@@ -2215,7 +2215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 661981132}
   - component: {fileID: 661981134}
-  - component: {fileID: 661981133}
+  - component: {fileID: 661981135}
   m_Layer: 0
   m_Name: doorTrigger
   m_TagString: triggerHome
@@ -2238,19 +2238,6 @@ Transform:
   m_Father: {fileID: 793583601}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &661981133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661981131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a42ef8e2a0f13b741bfef8e7fe087d4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: MainScene
 --- !u!61 &661981134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2277,6 +2264,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0061507, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &661981135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661981131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ef8e2a0f13b741bfef8e7fe087d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: MainScene
 --- !u!1 &793583600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4728,7 +4728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1826613423
 MonoBehaviour:
   m_ObjectHideFlags: 0
