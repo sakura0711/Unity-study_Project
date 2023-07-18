@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnApple : MonoBehaviour
 {
     [Header("要生成的蘋果數量/範圍(x1,x2,y1,y2)")]  //可以在變數間寫上標題
-    public int spawnAppleAmount;
+    // public int spawnAppleAmount;
     public float[] spawnPos = new float[] { -17f, 14f, -10f, 15f };
     [SerializeField] GameObject apple;
     [SerializeField] Transform appleClass;
@@ -15,8 +15,9 @@ public class SpawnApple : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // DataBase.spawnAppleAmount = spawnAppleAmount;
         // 生成蘋果物件
-        for (int i = 0; spawnedApples.Count < spawnAppleAmount; i++)
+        for (int i = 0; spawnedApples.Count < DataBase.spawnAppleAmount; i++)
         {
             GenerateApple();
         }
@@ -40,11 +41,11 @@ public class SpawnApple : MonoBehaviour
     // 檢查生成位置是否與障礙物重疊
     bool CheckOverlap(Vector3 position)
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.8f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 2f);
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.CompareTag("obstacle"))
+            if (collider.CompareTag("obstacle") || collider.CompareTag("apple"))
             {
                 return true;
             }

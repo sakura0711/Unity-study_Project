@@ -21,7 +21,7 @@ public class player : MonoBehaviour
     {
         playerFilpX = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        score = 0;
+        score = DataBase.score;
         scoreText.text = "獲得的蘋果 : 0";
         gameObject.transform.position = new Vector3(0, 0, 0);
 
@@ -70,7 +70,8 @@ public class player : MonoBehaviour
             scoreText.text = "獲得的蘋果 : " + score.ToString();
             // Debug.Log("score: " + score);
             Destroy(other.gameObject);
-
+            DataBase.score = score;
+            DataBase.spawnAppleAmount -= 1;
         }
     }
 }

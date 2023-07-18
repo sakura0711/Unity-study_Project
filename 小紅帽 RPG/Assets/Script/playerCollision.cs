@@ -22,7 +22,7 @@ public class playerCollision : MonoBehaviour
 
         if (other.gameObject.name == "HomeTrigger")
         {
-            Debug.Log("小紅帽 碰撞到了 door");
+            Debug.Log("小紅帽 碰撞到了 door(進門)");
             gameObject.transform.position = new Vector3(0, -3, 0);
 
             SceneManager.LoadScene(other.gameObject.GetComponent<SceneInfo>().SceneName);
@@ -30,7 +30,7 @@ public class playerCollision : MonoBehaviour
         if (other.gameObject.name == "doorTrigger")
         {
             Debug.Log("小紅帽 碰撞到了 door(出門)");
-            gameObject.transform.position = new Vector3(0, 0, 0);
+            gameObject.transform.position = new Vector3(21.77f, 22.6f, 0);
             SceneManager.LoadScene(other.gameObject.GetComponent<SceneInfo>().SceneName);
         }
     }
