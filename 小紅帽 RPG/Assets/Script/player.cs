@@ -31,9 +31,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+    private void FixedUpdate()
+    {
         PlayerMove();
     }
-
     private void PlayerMove()
     {
         if (Input.GetKey(KeyCode.W))
