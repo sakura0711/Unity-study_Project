@@ -6,9 +6,7 @@ TagManager:
   tags:
   - apple
   - obstacle
-  - triggerBookCase
-  - triggerDoor
-  - triggerHome
+  - EventTrigger
   layers:
   - Default
   - TransparentFX

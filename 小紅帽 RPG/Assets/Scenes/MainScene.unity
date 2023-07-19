@@ -51023,13 +51023,12 @@ GameObject:
   - component: {fileID: 671449747}
   - component: {fileID: 671449746}
   - component: {fileID: 671449748}
+  - component: {fileID: 671449753}
   - component: {fileID: 671449750}
   - component: {fileID: 671449749}
   - component: {fileID: 671449751}
   - component: {fileID: 671449752}
-  - component: {fileID: 671449753}
   - component: {fileID: 671449754}
-  - component: {fileID: 671449755}
   m_Layer: 6
   m_Name: RedGirl
   m_TagString: Player
@@ -51224,20 +51223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef947680ce155e47956b0ad480706cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &671449755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671449745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c88a3bbf953244282c85bce633fd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 2009208142}
-  tipText: {fileID: 667978509}
 --- !u!1 &695506888
 GameObject:
   m_ObjectHideFlags: 0
@@ -63096,7 +63081,7 @@ GameObject:
   - component: {fileID: 1337820776}
   m_Layer: 0
   m_Name: HomeTrigger
-  m_TagString: triggerHome
+  m_TagString: EventTrigger
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
